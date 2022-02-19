@@ -1,10 +1,19 @@
+import styled,{createGlobalStyle} from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+body{
+  margin: 0;
+  padding: 0;
+  background-color: red;
+}`;
 
 
 function App() {
   return (
-    <div className="App">
-    <h1>Hello</h1>
-    </div>
+    <>
+      <GlobalStyle/>
+      <h1>Hello</h1>
+    </>
   );
 }
 

@@ -33,7 +33,7 @@ export default function withDataFetching (wrappedComponent) {
         render(){
 
             const {data, loading} = this.state;
-            <wrappedComponent data={data} loading={loading}/>
+            <wrappedComponent data={data} loading={loading} {...this.props}/>
 
         }
     }
