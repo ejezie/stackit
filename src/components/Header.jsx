@@ -3,7 +3,9 @@ import logo from '../assets/coding.png'
 import styled from 'styled-components'
 
 const HeaderWrap = styled.div`
-display : flex;`
+display : flex;
+align-items: center;
+justify-content: center;`
 
 function Header() {
   return (
