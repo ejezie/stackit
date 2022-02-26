@@ -19,52 +19,61 @@ const Alert = styled.div`
 
 const ROOT_API = 'https://api.stackexchange.com/2.2/';
 
-export class Feed extends Component {
-  constructor(){
-    super(); 
+
+
+//     if (loading || error){
+//       {loading ? <Oval color="#00BFFF" height={80} width={80} /> : error}
+//     }
+
+
+
+class Feed extends Component {
+  constructor() {
+    super();
     this.state = {
-      data : [],
+      data: [],
       loading: true,
       error: '',
-    }
+    };
   }
 
-  async componentDidMount(){
-    try{
-      const data = await fetch(`${ROOT_API}questions?order=desc&sort=activity&tagged=reactjs&site=stackoverflow`,)
-      const dataJson = await data.json();
-      console.log(data);
+  async componentDidMount() {
+    try {
+      const data = await fetch(
+        `${ROOT_API}questions?order=desc&sort=activity&tagged=reactjs&site=stackoverflow`,
+      );
+      const dataJSON = await data.json();
 
-      if(dataJson){
+      if (dataJSON) {
         this.setState({
-          data: dataJson,
+          data: dataJSON,
           loading: false,
         });
       }
-    }catch(error){
+    } catch (error) {
       this.setState({
-        // error: error.message,
-        error: "error",
         loading: false,
-      })
+        error: error.message,
+      });
     }
   }
 
   render() {
+    const { data, loading, error } = this.state;
+    console.log(data);
 
-    const {data, loading, error} = this.state;
-
-    if (loading || error){
-      <Alert>{loading ? <Oval color="#00BFFF" height={80} width={80} /> : error}</Alert>
+    if (loading || error) {
+      return <Alert>{loading ? 'Loading...' : error}</Alert>;
     }
 
     return (
-      <FeedWrap>{
-        data.items.map((item) => {
-          <Card key={item.question_id} item = {item}></Card>
-        })}</FeedWrap>
-    )
+      <FeedWrap>
+        {data.items.map(item => (
+          <Card key={item.question_id} data={item} />
+        ))}
+      </FeedWrap>
+    );
   }
 }
 
-export default Feed
+export default Feed;
