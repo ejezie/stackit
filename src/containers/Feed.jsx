@@ -19,14 +19,6 @@ const Alert = styled.div`
 
 const ROOT_API = 'https://api.stackexchange.com/2.2/';
 
-
-
-//     if (loading || error){
-//       {loading ? <Oval color="#00BFFF" height={80} width={80} /> : error}
-//     }
-
-
-
 class Feed extends Component {
   constructor() {
     super();
@@ -63,7 +55,7 @@ class Feed extends Component {
     console.log(data);
 
     if (loading || error) {
-      return <Alert>{loading ? 'Loading...' : error}</Alert>;
+      return <Alert>{loading ? <Oval color="#00BFFF" height={80} width={80} /> : error}</Alert>;
     }
 
     return (
