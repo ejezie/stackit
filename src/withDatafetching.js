@@ -41,3 +41,5 @@ export default function withDataFetching (wrappedComponent) {
     withDataFetching.displayName = `withDataFetching(${wrappedComponent.name})`;
     return withDataFetching;
 }
+
+

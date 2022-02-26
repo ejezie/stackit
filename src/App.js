@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './components/Header';
-// import Feed from './Feed';
+import Feed from './containers/Feed';
+// import "../node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const GlobalStyle = createGlobalStyle`
 
   *{
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Shizuru&display=swap');
-    font-family: 'Poppins', sans-serif;
+    
   }
   body {
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
   }
 `;
 
@@ -28,7 +30,7 @@ class App extends Component {
         <GlobalStyle />
         <AppWrapper>
           <Header />
-          {/* <Feed /> */}
+          <Feed />
            <h1>hello marry madlin</h1>
         </AppWrapper>
       </>
