@@ -7,17 +7,18 @@ const CardWrap = styled.div`
   justify-content: center;
   width: 10rem
   height: 50rem;
+  background-color: red;
   border-radius: 50px;
-  padding: 19rem 0;
+  // padding: 19rem 0;
   // background: #e0e0e0;
-  box-shadow:  10px 10px 30px #c5c5c5, -10px -10px 30px #fbfbfb;
+  box-shadow:  5px 5px 20px #c5c5c5, -5px -5px 20px #fbfbfb;
   margin: 0 0 2rem 0;
   cursor: pointer;
   transition: all 0.3s;
   &:hover{
     background: #e0e0e0;
   }
-  .top{
+  .wrap{
     // width: 5rem;
     // height: 20rem
   }
@@ -26,8 +27,7 @@ const CardWrap = styled.div`
 function Card({data}) {
   return (
     <CardWrap>
-      
-      <div className="top">
+      <div className="wrap">
         <div className="tittle">{data.title}</div>
         <div className="tags">{`${data.tags} `}</div>
       </div>
