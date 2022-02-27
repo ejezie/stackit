@@ -8,6 +8,7 @@ display: flex;
 align-items; center;
 justify-content: center;
 flex-direction: column;
+width: 100vw;
 padding: 5px;`;
 
 const Alert = styled.div`

@@ -31,7 +31,6 @@ class App extends Component {
         <AppWrapper>
           <Header />
           <Feed />
-           <h1>hello marry madlin</h1>
         </AppWrapper>
       </>
     );
