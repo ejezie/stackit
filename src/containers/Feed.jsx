@@ -7,6 +7,7 @@ const FeedWrap = styled.div`
 display: flex;
 align-items; center;
 justify-content: center;
+flex-direction: column;
 padding: 5px;`;
 
 const Alert = styled.div`
@@ -55,7 +56,7 @@ class Feed extends Component {
     console.log(data);
 
     if (loading || error) {
-      return <Alert>{loading ? <Oval color="#00BFFF" height={80} width={80} /> : error}</Alert>;
+      return <Alert>{loading ? <Oval color="green" height={80} width={80} /> : error}</Alert>;
     }
 
     return (
