@@ -4,18 +4,20 @@ import {Oval} from "react-loader-spinner"
 import Card from '../components/Card';
 
 const FeedWrap = styled.div`
-display: flex;
-align-items; center;
-justify-content: center;
-flex-direction: column;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 0rem;
 ;`;
 
 const Alert = styled.div`
-  // width: 100vw;
-  // height: 100vh;
-  // display: flex;
-  // align-item: center;
-  // justify-center: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-item: center;
+  justify-center: center;
 `;
 
 const ROOT_API = 'https://api.stackexchange.com/2.2/';

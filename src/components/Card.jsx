@@ -5,31 +5,38 @@ const CardWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10rem
-  height: 50rem;
-  background-color: red;
-  border-radius: 50px;
-  // padding: 19rem 0;
-  // background: #e0e0e0;
-  box-shadow:  5px 5px 20px #c5c5c5, -5px -5px 20px #fbfbfb;
+  width: 80%;
+  height: 15rem;
+  border-radius: 10px;
+  box-shadow:  2px 2px 10px #c5c5c5, -2px -2px 10px #fbfbfb;
   margin: 0 0 2rem 0;
   cursor: pointer;
   transition: all 0.3s;
   &:hover{
-    background: #e0e0e0;
+    background: #f0f0f0; 
   }
-  .wrap{
-    // width: 5rem;
-    // height: 20rem
+  .center{
+ 
   }
 `;
 
 function Card({data}) {
   return (
     <CardWrap>
-      <div className="wrap">
+      <div className="top">
+          <img src={data.owner.profile_image} alt="profile" />
+          <div className="bar">
+            <div className="bar-one"></div>
+            <div className="bar-two"></div>
+          </div>
+      </div>
+      <div className="center">
         <div className="tittle">{data.title}</div>
         <div className="tags">{`${data.tags} `}</div>
+        <div className="link">{data.link}</div>
+      </div>
+      <div className="bottom">
+
       </div>
     </CardWrap>
   )
