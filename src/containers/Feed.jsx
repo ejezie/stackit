@@ -10,7 +10,6 @@ const FeedWrap = styled.div`
   justify-content: center;
   // flex-direction: column;
   flex-wrap: wrap;
-  padding: 2rem 0rem;
 ;`;
 
 const Alert = styled.div`
