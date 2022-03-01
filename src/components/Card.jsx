@@ -15,8 +15,16 @@ const CardWrap = styled.div`
   margin: 0 0.9rem 2rem 0;
   transition: all 0.3s;
   padding: 1.3rem 1rem;
+  cursor: pointer;
   &:hover{
     // background: #f0f0f0; 
+  }
+  @media (max-width: 722px) {
+    width: 40%;
+  }
+  @media (max-width: 560px) {
+    width: 80%;
+    margin: 0 0rem 2rem 0;
   }
   .wrap{
     width: 100%;
@@ -25,6 +33,7 @@ const CardWrap = styled.div`
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      height: 3rem;
       margin-bottom: 2rem;
       .user{
         // width: 4rem;

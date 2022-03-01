@@ -1,4 +1,6 @@
 .test{
     background-color: #212122;
-    
+    @media (max-width: 500px) {
+        width: 50%;
+    }
 }
