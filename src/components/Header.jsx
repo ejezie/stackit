@@ -8,7 +8,7 @@ align-items: center;
 justify-content: flex-start;
 padding: 1rem 3rem;
 cursor: pointer;
-box-shadow: 0.1px 0.1px 2px black;
+// box-shadow: 0.1px 0.1px 2px black;
 .header{
   font-size: 1.5rem;
   font-family: 'Shizuru', cursive;
