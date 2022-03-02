@@ -63,11 +63,14 @@ const CardWrap = styled.div`
         text-align: left;
         max-width: 1000px;
         padding-bottom: 1rem;
-        border-bottom: 1px black solid;
+        // border-bottom: 1px black solid;
       }
       .link{
         font-size: 0.9rem;
       }
+    }
+    .bottom{
+      font-size: 0.7rem;
     }
   }
 `;
@@ -90,7 +93,7 @@ function Card({data}) {
           {/* <a className='link' href={data.link}>{data.link}</a> */}
         </div>
         <div className="bottom">
-            {`${data.views} || ${data.answers}`}
+            {`views: ${data.view_count} || answers: ${data.answer_count}`}
         </div>
       </div>
     </CardWrap>
