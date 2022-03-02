@@ -57,10 +57,10 @@ const CardWrap = styled.div`
     .center{
       .title{
         height: 3rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin-bottom: 0.5rem;
-        font-weight: 700;
-        text-align: left;
+        font-weight: 600;
+        text-align: center;
         max-width: 1000px;
         padding-bottom: 1rem;
         // border-bottom: 1px black solid;
