@@ -90,7 +90,7 @@ function Card({data}) {
           {/* <a className='link' href={data.link}>{data.link}</a> */}
         </div>
         <div className="bottom">
-
+            {`${data.views} || ${data.answers}`}
         </div>
       </div>
     </CardWrap>
