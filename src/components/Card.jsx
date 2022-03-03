@@ -11,11 +11,14 @@ const CardWrap = styled.div`
   width: 27%;
   height: 12rem;
   border-radius: 10px;
-  box-shadow:  2px 2px 10px #c5c5c5, -2px -2px 10px #fbfbfb;
+  box-shadow: 
+    1px 1px 5px 0 rgba(0, 0, 0, 0.25),
+    -1px -1px 5px 0 rgba(255, 255, 255, 0.6);
   margin: 0 0.9rem 2rem 0;
   transition: all 0.3s;
   padding: 1.3rem 1rem;
   cursor: pointer;
+  // background: white;
   &:hover{
     // background: #f0f0f0; 
   }

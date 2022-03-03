@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Poppins', sans-serif;
+    background-color: #afd275;
   }
 `;
 

@@ -9,6 +9,7 @@ const FeedWrap = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  // background: #f8ecde;
 ;`;
 
 const Alert = styled.div`
