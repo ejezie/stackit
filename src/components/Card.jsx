@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 
 const CardWrap = styled.div`
   position: relative;
-  width: 20%;
+  display: flex;
+  align-item: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 19%;
   height: 20rem;
   box-shadow: inset 2px 2px 15px rgba(0,0,0,0.5),
               inset -2px -2px 5px rgba(255,255,255,0.1),
@@ -23,7 +27,7 @@ const CardWrap = styled.div`
     width: 40%;
   }
   @media (max-width: 560px) {
-    width: 80%;
+    width: 70%;
     margin: 0 0rem 2rem 0;
   }
  
@@ -33,14 +37,19 @@ const CardWrap = styled.div`
     bottom: 20px;
     right: 20px;
     left: 20px;
-    background: #2a2b2f;
-    border: 2px solid #1e1f23;
+    background: #1e1f23;
+    // border: 2px solid #1e1f23;
     border-radius: 15px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transition: all 0.5s;
+    &:hover{
+      top: -10px;
+      bottom: -10px;
+    }
     .top{
       display: flex;
       align-items: center;
@@ -59,25 +68,18 @@ const CardWrap = styled.div`
           font-weight: 700;
         }
       }
-      .tags{
-        font-size: 0.65rem;
-        color: sky-blue;
-        width: 7rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
     }
     .center{
       .title{
-        height: 3rem;
+        height: 2rem;
+        width: 13rem;
         font-size: 0.7rem;
         padding: 0 1rem;
         margin-bottom: 0.5rem;
         font-weight: 600;
         text-align: center;
         padding-bottom: 1rem;
-        // white-space: nowrap;
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -92,12 +94,12 @@ const CardWrap = styled.div`
       box-shadow: 
        2px 2px 6px 0 rgba(0, 0, 0, 0.25),
        -2px -2px 6px 0 rgba(255, 255, 255, 0.1);
-      border-radius: 50px;
-    &:hover{
-      box-shadow: 
-      inset 2px 2px 6px 0 rgba(0, 0, 0, 0.25),
-      inset -2px -2px 6px 0 rgba(255, 255, 255, 0.1);
-    }
+        border-radius: 50px;
+      &:hover{
+        box-shadow: 
+        inset 2px 2px 6px 0 rgba(0, 0, 0, 0.25),
+        inset -2px -2px 6px 0 rgba(255, 255, 255, 0.1);
+      }
     }
   }
 `;
@@ -114,14 +116,16 @@ function Card({data}) {
                 {data.owner.display_name}
               </div>
             </div>
-            {/* <div className="tags">{`#${data.tags}`}</div> */}
           </div>
           <div className="center">
             <div className="title">{data.title}</div>
             {/* <a className='link' href={data.link}>{data.link}</a> */}
           </div>
           <div className="bottom">
-              {`views: ${data.view_count} || answers: ${data.answer_count}`}
+             View Question
+          </div>
+          <div className="views">
+            {`views: ${data.view_count} `}
           </div>
         </div>
       </div>

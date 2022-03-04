@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Poppins', sans-serif;
-    background: #232427;
+    background: #161616;
     color: white;
   }
 `;
