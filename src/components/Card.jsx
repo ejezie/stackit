@@ -53,10 +53,13 @@ const CardWrap = styled.div`
     left: 5px;
     }
     &:hover .hoverbg{
-      transform: translateY(158px);
+      margin-top: 20rem 
     }
-    &:hover .hoverbg{
-      transform: translateY(158px);
+    &:hover .top > .user > .img-wrap > .image{
+      border: 15px solid rgb(49, 38, 38);
+    }
+    &:hover .views{
+      border: 2px solid rgba(255, 255, 255, 0.1);
     }
     .hoverbg{
       position: absolute;
@@ -67,22 +70,30 @@ const CardWrap = styled.div`
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
-      transition: all 0.5s;
-      transform: translateY(350px);
+      transition: all 0.3s 1s;
+      margin-top: 50rem 
     }
     .top{
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1rem;
+      height: 7rem;
       .user{
+        .img-wrap{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 6.4rem;
+        }
         .image{
           border-radius: 50%;
           width: 3.5rem;
           height: 3.5rem;
           background: black;
-          border: 15px solid rgb(49, 38, 38);
+          border: 12px solid rgb(49, 38, 38);
           margin-bottom: 0.3rem;
+          transition: all 0.3s 1.3s;
         }
         .name{
           font-size: 0.6rem;
@@ -95,7 +106,7 @@ const CardWrap = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.4rem;
       padding: 0.5rem;
       border-radius: 50px;
       .title{
@@ -148,7 +159,9 @@ function Card({data}) {
           <div className="hoverbg"></div>
           <div className="top">
             <div className="user">
-              <img className='image' src={data?.owner?.profile_image || userImage} alt="profile"/>
+              <div className="img-wrap">
+                <img className='image' src={data?.owner?.profile_image || userImage} alt="profile"/>
+              </div>
               <div className="name">
                 {data.owner.display_name}
               </div>
