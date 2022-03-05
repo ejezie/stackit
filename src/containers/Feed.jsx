@@ -13,11 +13,11 @@ const FeedWrap = styled.div`
 ;`;
 
 const Alert = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-item: center;
-  justify-center: center;
+width: 100vw;
+height: 70vh;
+display: flex;
+align-items: center;
+justify-content: center;
 `;
 
 const ROOT_API = 'https://api.stackexchange.com/2.2/';

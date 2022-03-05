@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import userImage from '../assets/user.png'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const CardWrap = styled.div`
   position: relative;
