@@ -30,7 +30,7 @@ export class Question extends Component {
     render() {
         const {data, loading, error} = this.state;
         if(loading || error){
-            return <Alert>{loading ? <Oval color="green" height={80} width={80} /> : error}</Alert>;
+            return <Alert>{loading ? <Oval color="green" height={50} width={50} /> : error}</Alert>;
         }
         return (
         <QuestionWrap>Question</QuestionWrap>
