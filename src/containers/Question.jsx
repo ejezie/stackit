@@ -33,9 +33,10 @@ export class Question extends Component {
 
     async componentDidMount(){
 
-         const { params } = this.props;
+         const { params, search } = this.props;
         // ${match.params.id}
         console.log(params);
+        console.log(search);
         try{
             const data = await fetch(`${ROOT_API}questions/${params.id}?site=stackoverflow`,)
             const dataJson = await data.json();

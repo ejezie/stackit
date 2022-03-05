@@ -54,7 +54,6 @@ class Feed extends Component {
 
   render() {
     const { data, loading, error } = this.state;
-    console.log(data);
 
     if (loading || error) {
       return <Alert>{loading ? <Oval color="green" height={50} width={50} /> : error}</Alert>;
