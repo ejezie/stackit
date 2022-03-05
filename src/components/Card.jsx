@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import userImage from '../assets/user.png'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const CardWrap = styled.div`
   position: relative;
@@ -127,6 +127,8 @@ const CardWrap = styled.div`
       font-size: 0.7rem;
       padding: 1rem;
       transition: all 0.5s;
+      color: white;
+      text-decoration: none;
       z-index: 2;
       box-shadow: 
        2px 2px 6px 0 rgba(0, 0, 0, 0.25),
@@ -151,6 +153,9 @@ const CardWrap = styled.div`
   }
 `;
 
+const CardLink = styled(Link)`
+`
+
 function Card({data}) {
   return (
     <CardWrap>
@@ -171,9 +176,9 @@ function Card({data}) {
             <div className="title">{data.title}</div>
             {/* <a className='link' href={data.link}>{data.link}</a> */}
           </div>
-          <div className="bottom">
+          <CardLink key={data.question_id} to={`/questions/${data.question_id}`} className="bottom">
              View Question
-          </div>
+          </CardLink>
           <div className="views">
           <i class="fa-solid fa-eye"></i>
             {`views: ${data.view_count} || answers: ${data.answer_count} `}

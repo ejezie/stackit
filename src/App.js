@@ -33,7 +33,7 @@ class App extends Component {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Feed/>}/>
-              <Route path="/:id" element={<Question/>}/>
+              <Route path="/questions/:id" element={<Question/>}/>
             </Routes>
           </BrowserRouter>
         </AppWrapper>
