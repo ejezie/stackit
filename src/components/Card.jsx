@@ -180,7 +180,6 @@ function Card({data}) {
              View Question
           </CardLink>
           <div className="views">
-          <i class="fa-solid fa-eye"></i>
             {`views: ${data.view_count} || answers: ${data.answer_count} `}
           </div>
         </div>

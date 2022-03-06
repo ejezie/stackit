@@ -4,10 +4,10 @@ const withRouter = (WrappedComponent) => (props) => {
     const params = useParams();
     const location = useLocation();
     const navigation = useNavigate();
-    const search = useSearchParams();
+    let [page, setPage] = useSearchParams();
 
     return(
-        <WrappedComponent {...props} search={search} params={params} location={location} navigation={navigation} />
+        <WrappedComponent {...props} setPage={setPage} page={page} params={params} location={location} navigation={navigation} />
     )
 }
 

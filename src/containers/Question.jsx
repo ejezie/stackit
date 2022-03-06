@@ -33,10 +33,10 @@ export class Question extends Component {
 
     async componentDidMount(){
 
-         const { params, search } = this.props;
-        // ${match.params.id}
-        console.log(params);
-        console.log(search);
+         const { params } = this.props;
+         const { page } = this.props;
+         let page_query = page.get("page");
+        console.log(page_query);
         try{
             const data = await fetch(`${ROOT_API}questions/${params.id}?site=stackoverflow`,)
             const dataJson = await data.json();
@@ -57,7 +57,7 @@ export class Question extends Component {
 
     render() {
         const {data, loading, error} = this.state;
-        // console.log(data.items);
+        // console.log(data.items)
         if(loading || error){
             return <Alert>{loading ? <Oval color="green" height={50} width={50} /> : error}</Alert>;
         }
