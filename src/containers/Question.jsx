@@ -21,23 +21,20 @@ const Alert = styled.div`
 const ROOT_API = 'https://api.stackexchange.com/2.2/';
 
 export class Question extends Component {
-    constructor({page}){
+    constructor(){
         super();
-        console.log(page)
-        let page_query = page.get("page");
 
         this.state = {
             data: [],
             loading: true,
             error: '',
-            page_num: page_query ? parseInt(page_query) : 1,
         }
     }
 
     async componentDidMount(){
 
-         const { params } = this.props;
-         const { page } = this.props;
+        const { params } = this.props;
+        
         try{
             const data = await fetch(`${ROOT_API}questions/${params.id}?site=stackoverflow`,)
             const dataJson = await data.json();

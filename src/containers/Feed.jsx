@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 import {Oval} from "react-loader-spinner"
 import Card from '../components/Card';
+import withRouter from '../withRouter';
 
 const FeedWrap = styled.div`
   width: 100vw;
@@ -22,12 +23,16 @@ justify-content: center;
 const ROOT_API = 'https://api.stackexchange.com/2.2/';
 
 class Feed extends Component {
-  constructor() {
+  constructor({page}) {
     super();
+    let page_value = page.get("page")
+    console.log(page_value)
+
     this.state = {
       data: [],
       loading: true,
       error: '',
+      page_num: page_value ? parseInt(page_value) : 1,
     };
   }
 
@@ -69,4 +74,4 @@ class Feed extends Component {
   }
 }
 
-export default Feed;
+export default withRouter(Feed);
