@@ -22,6 +22,7 @@ const ROOT_API = 'https://api.stackexchange.com/2.2/';
 
 export class Question extends Component {
     constructor(){
+        
         super();
 
         this.state = {

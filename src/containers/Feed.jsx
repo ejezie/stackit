@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {Oval} from "react-loader-spinner"
 import Card from '../components/Card';
 import withRouter from '../withRouter';
+import { Link, matchRoutes } from 'react-router-dom';
 
 const Wrap = styled.div`
   position: relative;
@@ -38,27 +39,30 @@ const BtnWrap = styled.div`
   justify-content: space-between;
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  .prev, .next{
-    cursor: pointer;
-    width: 5rem;
-    transition: all 0.4s;
-    box-shadow: 
-       2px 2px 6px 0 rgba(0, 0, 0, 0.25),
-       -2px -2px 6px 0 rgba(255, 255, 255, 0.1);
-        border-radius: 50px;
-    &:hover{
-      color: rgba(255,255,255,0.5)
-    }
-  }
+`;
+
+const Btn = styled(Link)`
+ text-decoration: none;
+ color: white;
+ &:hover{
+  color: rgba(255,255,255,0.5)
+  } 
+  cursor: pointer;
+  width: 5rem;
+  transition: all 0.4s;
+  box-shadow: 
+     2px 2px 6px 0 rgba(0, 0, 0, 0.25),
+     -2px -2px 6px 0 rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
 `;
 
 const ROOT_API = 'https://api.stackexchange.com/2.2/';
 
 class Feed extends Component {
-  constructor({page}) {
+  constructor({page, location,}) {
     super();
     let page_value = page.get("page")
-    console.log(page_value)
+    console.log(location.pathname)
 
     this.state = {
       data: [],
@@ -104,8 +108,8 @@ class Feed extends Component {
           ))}
         </FeedWrap>
         <BtnWrap className="btn-wrap">
-            <div className="prev">{"<"}</div>
-            <div className="next">{">"}</div>
+            <Btn to={"/"} className="prev">{"<"}</Btn>
+            <Btn to={"/"} className="next">{">"}</Btn>
         </BtnWrap>
       </Wrap>
     );
