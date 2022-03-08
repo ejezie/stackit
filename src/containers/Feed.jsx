@@ -4,12 +4,21 @@ import {Oval} from "react-loader-spinner"
 import Card from '../components/Card';
 import withRouter from '../withRouter';
 
+const Wrap = styled.div`
+  position: relative;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+;`;
 const FeedWrap = styled.div`
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 5rem;
 ;`;
 
 const Alert = styled.div`
@@ -18,6 +27,29 @@ height: 70vh;
 display: flex;
 align-items: center;
 justify-content: center;
+`;
+const BtnWrap = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  .prev, .next{
+    cursor: pointer;
+    width: 5rem;
+    transition: all 0.4s;
+    box-shadow: 
+       2px 2px 6px 0 rgba(0, 0, 0, 0.25),
+       -2px -2px 6px 0 rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+    &:hover{
+      color: rgba(255,255,255,0.5)
+    }
+  }
 `;
 
 const ROOT_API = 'https://api.stackexchange.com/2.2/';
@@ -65,11 +97,17 @@ class Feed extends Component {
     }
 
     return (
-      <FeedWrap>
-        {data.items.map(item => (
-          <Card key={item.question_id} data={item} />
-        ))}
-      </FeedWrap>
+      <Wrap>
+        <FeedWrap>
+          {data.items.map(item => (
+            <Card key={item.question_id} data={item} />
+          ))}
+        </FeedWrap>
+        <BtnWrap className="btn-wrap">
+            <div className="prev">{"<"}</div>
+            <div className="next">{">"}</div>
+        </BtnWrap>
+      </Wrap>
     );
   }
 }
