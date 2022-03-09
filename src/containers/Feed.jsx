@@ -3,7 +3,7 @@ import styled from "styled-components"
 import {Oval} from "react-loader-spinner"
 import Card from '../components/Card';
 import withRouter from '../withRouter';
-import { Link, matchRoutes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Wrap = styled.div`
   position: relative;
@@ -62,20 +62,22 @@ class Feed extends Component {
   constructor({page, location,}) {
     super();
     let page_value = page.get("page")
-    console.log(location.pathname)
+    let path_value = location.pathname;
+    // console.log(location.pathname)
 
     this.state = {
       data: [],
       loading: true,
       error: '',
       page_num: page_value ? parseInt(page_value) : 1,
+      path: path_value,
     };
   }
 
-  async componentDidMount() {
+  async fecthApi(page) {
     try {
       const data = await fetch(
-        `${ROOT_API}questions?order=desc&sort=activity&tagged=reactjs&site=stackoverflow`,
+        `${ROOT_API}questions?order=desc&sort=activity&tagged=reactjs&site=stackoverflow&page=${page}`,
       );
       const dataJSON = await data.json();
 
@@ -93,8 +95,15 @@ class Feed extends Component {
     }
   }
 
+  componentDidMount() {
+    const {page_num} = this.state;
+    this.fecthApi(page_num);
+  }
+
   render() {
-    const { data, loading, error } = this.state;
+    const { data, loading, error, page_num, path } = this.state;
+    console.log(path);
+    console.log(page_num);
 
     if (loading || error) {
       return <Alert>{loading ? <Oval color="green" height={50} width={50} /> : error}</Alert>;
@@ -108,8 +117,8 @@ class Feed extends Component {
           ))}
         </FeedWrap>
         <BtnWrap className="btn-wrap">
-            <Btn to={"/"} className="prev">{"<"}</Btn>
-            <Btn to={"/"} className="next">{">"}</Btn>
+            {page_num > 1 && <Btn to={`${path}?page=${page_num-1}`} className="prev">{"<"}</Btn>}
+            {data.has_more && <Btn to={`${path}?page=${page_num+1}`} className="next">{">"}</Btn>}
         </BtnWrap>
       </Wrap>
     );
