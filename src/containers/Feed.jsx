@@ -59,10 +59,10 @@ const Btn = styled(Link)`
 const ROOT_API = 'https://api.stackexchange.com/2.2/';
 
 class Feed extends Component {
-  constructor({page, location,}) {
+  constructor({page, location}) {
     super();
-    let page_value = page.get("page")
-    let path_value = location.pathname;
+    const page_value = page.get("page")
+    const path_value = location.pathname;
     // console.log(location.pathname)
 
     this.state = {
@@ -95,15 +95,36 @@ class Feed extends Component {
     }
   }
 
+  // handleBtnPrev(){
+  //   const {page_num} = this.state
+  //   this.setState({
+  //     // page_num: page_num - 1,
+  //     page_num: page_num-1,
+  //   })
+  // }
+
   componentDidMount() {
-    const {page_num} = this.state;
-    this.fecthApi(page_num);
+    this.fecthApi(this.state.page_num);
   }
+
+  componentDidUpdate(prevProps){
+    const {page} = this.props;
+    console.log("search-", this.props.location.search);
+    console.log("prev-search-", prevProps.location.search);
+    if(prevProps.location.search !== this.props.location.search){
+      this.setState({
+        page_num: parseInt(page.get("page")),
+      })
+      this.fecthApi(this.state.page_num);
+      console.log("page-", this.state.page_num);
+    }
+  };
 
   render() {
     const { data, loading, error, page_num, path } = this.state;
     console.log(path);
     console.log(page_num);
+    console.log(data);
 
     if (loading || error) {
       return <Alert>{loading ? <Oval color="green" height={50} width={50} /> : error}</Alert>;
