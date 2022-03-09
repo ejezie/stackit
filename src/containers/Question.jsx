@@ -2,12 +2,36 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import {Oval} from "react-loader-spinner"
 import withRouter from '../withRouter';
+import userImage from '../assets/user.png'
 
 const QuestionWrap = styled.div`
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    margin-bottom: 2rem;
+    .wrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 4rem 0;
+        width: 90%;
+        border: 1px rgba(255, 255, 255, 0.1) solid;
+         border-radius: 15px;
+         .img{
+             margin-bottom: 2rem;
+             border-radius: 50%;
+             border: 50px rgba(255, 255, 255, 0.1) solid;
+         }
+         .title{
+             margin-bottom: 1rem;
+             color: rgba(255, 255, 255, 0.3);
+         }
+         .link{
+             color: rgba(255, 255, 255, 0.5);
+         }
+    }
 `;
 
 const Alert = styled.div`
@@ -63,9 +87,9 @@ export class Question extends Component {
         return (
         <QuestionWrap>
             <div className="wrap">
-                {data.items[0].title}
-                {data.items[0].link}
-                <img src={data.items[0].owner.profile_image} alt="" /> 
+                <img className='img' src={data.items[0].owner.profile_image || userImage} alt="" /> 
+                <div className="title">{`Question : ${data.items[0].title}?`}</div>
+                <a className='link' href={data.items[0].link}>{data.items[0].link}</a>  
             </div>
         </QuestionWrap>
         )

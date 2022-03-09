@@ -114,6 +114,7 @@ class Feed extends Component {
     if(prevProps.location.search !== this.props.location.search){
       this.setState({
         page_num: parseInt(page.get("page")),
+        loading: true,
       })
       this.fecthApi(this.state.page_num);
       console.log("page-", this.state.page_num);
