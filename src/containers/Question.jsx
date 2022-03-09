@@ -23,13 +23,25 @@ const QuestionWrap = styled.div`
              margin-bottom: 2rem;
              border-radius: 50%;
              border: 50px rgba(255, 255, 255, 0.1) solid;
+             @media (max-width: 500px) {
+                width: 40%;
+                border: 40px rgba(255, 255, 255, 0.1) solid;
+            }
          }
          .title{
              margin-bottom: 1rem;
              color: rgba(255, 255, 255, 0.3);
+             @media (max-width: 500px) {
+                font-size: 0.7rem;
+                padding: 0rem .1rem;
+            }
          }
          .link{
              color: rgba(255, 255, 255, 0.5);
+             @media (max-width: 500px) {
+                font-size: 0.7rem;
+                padding: 0rem .1rem;
+            }
          }
     }
 `;
