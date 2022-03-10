@@ -1,4 +1,4 @@
-import { useLocation, useMatch, useNavigate, useParams, useSearchParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom"
 
 const withRouter = (WrappedComponent) => (props) => {
     const params = useParams();
