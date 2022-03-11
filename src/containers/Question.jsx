@@ -17,7 +17,7 @@ const QuestionWrap = styled.div`
         flex-direction: column;
         padding: 4rem 0;
         width: 90%;
-        border: 1px rgba(255, 255, 255, 0.1) solid;
+        // border: 1px rgba(255, 255, 255, 0.1) solid;
          border-radius: 15px;
          .img{
              margin-bottom: 2rem;
