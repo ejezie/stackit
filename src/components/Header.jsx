@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/coding.png'
 import styled from 'styled-components'
+import Helmet from "react-helmet"
 
 const HeaderWrap = styled.div`
 display : flex;
@@ -23,10 +24,16 @@ cursor: pointer;
 
 function Header() {
   return (
-    <HeaderWrap>
-      <h1 className='header'>stackit</h1>
-      <img className='header-image' src={logo} alt="logo" />
-    </HeaderWrap>
+    <>
+      <Helmet>
+        <title>Q&A Feed</title>
+        <meta name='description' content='This is a Community Feed project build with React' />
+      </Helmet>
+      <HeaderWrap>
+        <h1 className='header'>stackit</h1>
+        <img className='header-image' src={logo} alt="logo" />
+      </HeaderWrap>
+    </>
   )
 }
 
