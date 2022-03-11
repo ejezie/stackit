@@ -165,7 +165,7 @@ function Card({data}) {
           <div className="top">
             <div className="user">
               <div className="img-wrap">
-                <img className='image' src={data?.owner?.profile_image || userImage} alt="profile"/>
+                <img className='image' src={data?.owner?.profile_image} onError={(e)=>{e.target.src=userImage}} alt="profile"/>
               </div>
               <div className="name">
                 {data.owner.display_name}

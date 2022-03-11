@@ -26,7 +26,7 @@ function Header() {
   return (
     <>
       <Helmet>
-        <title>Q&A Feed</title>
+        <title>`Q and A Feed`</title>
         <meta name='description' content='This is a Community Feed project build with React' />
       </Helmet>
       <HeaderWrap>
