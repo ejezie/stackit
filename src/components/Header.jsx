@@ -26,7 +26,6 @@ function Header() {
     <HeaderWrap>
       <h1 className='header'>stackit</h1>
       <img className='header-image' src={logo} alt="logo" />
-      {/* <h1 className='header'>Over</h1> */}
     </HeaderWrap>
   )
 }
